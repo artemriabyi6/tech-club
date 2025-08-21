@@ -1,0 +1,225 @@
+/* Speakers.css */
+.speakers-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.speakers-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='1' fill='%23FFFFFF' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    pointer-events: none;
+}
+
+.speakers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.speakers-header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.speakers-header h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+     transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateX(50px);
+}
+.speakers-header h2.animate-in {
+   transform: translateX(0px);
+       opacity: 1;
+}
+
+.speakers-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateX(50px);
+    line-height: 1.6;
+}
+
+.speakers-header p.animate-in {
+       transform: translateX(0px);
+       opacity: 1;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.speaker-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.speaker-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+.speaker-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.speaker-card:hover .speaker-image img {
+    transform: scale(1.1);
+}
+
+.speaker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.speaker-card:hover .speaker-overlay {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: white;
+    color: #a855f7;
+    transform: translateY(-3px);
+}
+
+.speaker-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.speaker-info h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.speaker-role {
+    color: #a855f7;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.speaker-company {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .speakers-section {
+        padding: 60px 0;
+    }
+    
+    .speakers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .speaker-image {
+        height: 250px;
+    }
+    
+    .speakers-header p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .speakers-container {
+        padding: 0 15px;
+    }
+    
+    .speaker-info {
+        padding: 20px;
+    }
+    
+    .speaker-info h3 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,228 @@
+/* Глобальні стилі для анімацій */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header.animate-in ul li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+header.animate-in ul li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+header.animate-in ul li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+header.animate-in ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul li a {
+  text-transform: uppercase;
+  color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+ul li a:hover {
+  color: #a855f7;
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a855f7;
+  transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+
+.logo-block {
+  max-width: 120px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+header.animate-in .logo-block {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.logo-block img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* text-align: center; */
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 7vw, 10rem);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin: 0 0 7rem 0;
+  opacity: 0;
+  /* Використовуємо margin для центрування замість transform */
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  transition: opacity 1s ease, margin-top 1s ease;
+}
+
+.hero-content h1.animate-in {
+  opacity: 1;
+  margin-top: 0;
+}
+
+h1 span {
+  display: block;
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 span {
+    padding-left: 100px;
+  }
+}
+
+.book-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  padding: 15px 40px;
+  border: 2px solid white;
+  border-radius: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.book-btn.animate-in {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.book-btn:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Анімація для лінії під текстом (додатково) */
+.hero-content h1::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: white;
+  margin: 10px auto 0;
+  transition: width 1.5s ease 0.5s;
+}
+
+.hero-content h1.animate-in::after {
+  width: 100px;
+}

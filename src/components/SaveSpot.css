@@ -1,0 +1,241 @@
+/* SaveSpot.css */
+.save-spot-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-spot-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.save-spot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+       background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+
+    z-index: 1;
+}
+
+.save-spot-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.save-spot-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.image-block {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+    height: 500px;
+}
+
+.image-block.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.inner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(168, 85, 247, 0.2), rgba(79, 70, 229, 0.2));
+    mix-blend-mode: overlay;
+    border-radius: 20px;
+}
+
+.text-block {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.text-block.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.save-spot-heading {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.save-spot-heading span {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.save-spot-heading.animate-in span:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.save-spot-heading.animate-in span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.save-spot-heading.animate-in span:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.save-spot-heading.animate-in span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.save-spot-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.save-spot-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-now-btn {
+    display: inline-block;
+    padding: 18px 45px;
+    background: linear-gradient(45deg, #a855f7, #8b5cf6);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease, all 0.3s ease;
+}
+
+.book-now-btn.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-now-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.6);
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+}
+
+/* Адаптивність */
+@media (max-width: 968px) {
+    .save-spot-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .image-block {
+        max-width: 500px;
+        margin: 0 auto;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .save-spot-section {
+        padding: 80px 0;
+    }
+    
+    .save-spot-container {
+        padding: 0 15px;
+    }
+    
+    .save-spot-content {
+        gap: 30px;
+    }
+    
+    .image-block {
+        height: 350px;
+    }
+    
+    .save-spot-text {
+        font-size: 1.1rem;
+    }
+    
+    .book-now-btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .save-spot-heading {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .image-block {
+        height: 300px;
+    }
+    
+    .save-spot-text {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .book-now-btn {
+        padding: 12px 30px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
