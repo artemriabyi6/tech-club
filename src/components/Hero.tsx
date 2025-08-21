@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './Hero.css';
 import { useOptimizedAnimation } from '../useOptimizedAnimation';
-
+import logo from '../assets/logo3.png'
 
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -70,7 +70,7 @@ const Hero = () => {
             <header ref={headerRef}>
                 <div className="container">
                     <div className="logo-block">
-                        <img src="../assets/logo3.png" alt="logo" />
+                        <img src={logo} alt="logo" />
                     </div>
                     <nav>
                         <ul>
