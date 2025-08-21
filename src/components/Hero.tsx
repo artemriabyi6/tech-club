@@ -70,7 +70,7 @@ const Hero = () => {
             <header ref={headerRef}>
                 <div className="container">
                     <div className="logo-block">
-                        <img src="/assets/logo3.png" alt="logo" />
+                        <img src="../assets/logo3.png" alt="logo" />
                     </div>
                     <nav>
                         <ul>
