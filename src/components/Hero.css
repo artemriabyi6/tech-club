@@ -169,6 +169,7 @@ h1 span {
   display: block;
   margin-top: 0.5rem;
   padding-left: 2rem;
+  color: blueviolet;
 }
 
 @media (min-width: 768px) {

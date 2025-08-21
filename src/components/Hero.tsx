@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import './Hero.css';
 import { useOptimizedAnimation } from '../useOptimizedAnimation';
 
+
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
