@@ -1,6 +1,16 @@
 import { useRef, useEffect, useState } from 'react';
 import { useOptimizedAnimation } from '../useOptimizedAnimation';
-import './speakers.css';
+import  './speakers.css';
+
+import speaker1 from '../assets/speaker9.webp'
+import speaker2 from '../assets/speaker2.webp'
+import speaker3 from '../assets/speaker8.webp'
+import speaker4 from '../assets/speaker4.webp'
+import speaker5 from '../assets/speaker5.webp'
+import speaker6 from '../assets/speaker6.webp'
+
+
+
 
 interface Speaker {
     id: number;
@@ -84,7 +94,7 @@ const Speakers = () => {
             name: "Emma Johnson",
             role: "Senior Product Designer",
             company: "TechVision Inc.",
-            image: "/assets/speaker9.webp",
+            image: speaker1,
             social: { twitter: "#", linkedin: "#" }
         },
         {
@@ -92,7 +102,7 @@ const Speakers = () => {
             name: "Michael Chen",
             role: "AI Research Lead",
             company: "NeuroSphere Labs",
-            image: "/assets/speaker2.webp",
+            image: speaker2,
             social: { twitter: "#", linkedin: "#" }
         },
         {
@@ -100,7 +110,7 @@ const Speakers = () => {
             name: "Sophia Williams",
             role: "Digital Marketing Director",
             company: "Global Connect",
-            image: "/assets/speaker8.webp",
+            image: speaker3,
             social: { twitter: "#", linkedin: "#" }
         },
         {
@@ -108,7 +118,7 @@ const Speakers = () => {
             name: "Alex Rodriguez",
             role: "Blockchain Architect",
             company: "ChainInnovate",
-            image: "/assets/speaker4.webp",
+            image: speaker4,
             social: { twitter: "#", linkedin: "#" }
         },
         {
@@ -116,7 +126,7 @@ const Speakers = () => {
             name: "Olivia Smith",
             role: "UX Research Lead",
             company: "UserFirst Design",
-            image: "/assets/speaker5.webp",
+            image: speaker5,
             social: { twitter: "#", linkedin: "#" }
         },
         {
@@ -124,7 +134,7 @@ const Speakers = () => {
             name: "Daniel Brown",
             role: "Data Science Director",
             company: "AnalyticsPro",
-            image: "/assets/speaker6.webp",
+            image: speaker6,
             social: { twitter: "#", linkedin: "#" }
         }
     ];
